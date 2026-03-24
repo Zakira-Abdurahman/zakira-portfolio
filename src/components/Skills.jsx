@@ -16,7 +16,7 @@ function Skills() {
     <section id="skills" className="py-24 bg-gray-800">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent mb-12">
-          Technical Arsenal
+          Technical Skills
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5">
           {skills.map((skill) => (
