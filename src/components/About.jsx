@@ -22,7 +22,7 @@ function About() {
             <div className="flex items-start gap-4 p-6 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10">
               <i className="fas fa-code text-2xl text-indigo-400 mt-1 shrink-0"></i>
               <div>
-                <p>Built production-ready solutions including a <strong className="text-purple-400">facial recognition attendance system</strong> and a <strong className="text-purple-400">digital meal card platform</strong> used by Ethiopian Airlines staff.</p>
+                <p>Built projects including a <strong className="text-purple-400">facial recognition attendance system</strong> as a final year project and a <strong className="text-purple-400">digital meal card system</strong> inspired by experience gained during my internship at Ethiopian Airlines, developed for university use.</p>
               </div>
             </div>
             
@@ -35,13 +35,13 @@ function About() {
             
             <div className="flex gap-4 pt-6 flex-wrap">
               <span className="px-4 py-2 bg-indigo-600/30 text-indigo-300 rounded-full text-sm border border-indigo-500/50 font-semibold">
-                <i className="far fa-calendar-alt mr-1"></i> 2+ years exp.
+                <i className="fas fa-lightbulb mr-1"></i> Problem Solver
               </span>
               <span className="px-4 py-2 bg-indigo-600/30 text-indigo-300 rounded-full text-sm border border-indigo-500/50 font-semibold">
-                <i className="fas fa-code mr-1"></i> 15+ projects
+                <i className="fas fa-laptop-code mr-1"></i> Full-Stack Development
               </span>
               <span className="px-4 py-2 bg-indigo-600/30 text-indigo-300 rounded-full text-sm border border-indigo-500/50 font-semibold">
-                <i className="fas fa-users mr-1"></i> Team player
+                <i className="fas fa-brain mr-1"></i> Machine Learning Enthusiast
               </span>
             </div>
           </div>
