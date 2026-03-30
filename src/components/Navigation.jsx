@@ -1,27 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState("hero");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+      const sections = ["hero", "about", "skills", "projects", "contact"];
+      const scrollPos = window.scrollY + 100;
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el && scrollPos >= el.offsetTop && scrollPos < el.offsetTop + el.offsetHeight) {
+          setActive(section);
+          break;
+        }
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Home", href: "#hero", id: "hero" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Skills", href: "#skills", id: "skills" },
+    { name: "Projects", href: "#projects", id: "projects" },
+    { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+        scrolled ? "bg-gray-900/80 backdrop-blur-xl shadow-lg" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,32 +48,38 @@ function Navigation() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                className={`relative text-gray-300 hover:text-white transition-colors duration-300 ${
+                  active === item.id ? "text-white" : ""
+                }`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 transition-all group-hover:w-full"></span>
+                {active === item.id && (
+                  <motion.span
+                    layoutId="activeNav"
+                    className="absolute -bottom-1 left-0 w-full h-0.5 bg-purple-500"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </a>
             ))}
-            <a
-              href="/zakira-cv.pdf"
-              download
-              className="px-4 py-2 rounded-full bg-linear-to-r from-indigo-600 to-purple-600 text-white font-medium hover:shadow-lg transition transform hover:-translate-y-0.5"
-            >
-              Resume
-            </a>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden text-gray-300 focus:outline-none"
           >
-            <i className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-xl`}></i>
+            <i className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-xl`}></i>
           </button>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800 py-4 px-4 space-y-3">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          className="md:hidden bg-gray-900/95 backdrop-blur-lg border-t border-gray-800 py-4 px-4 space-y-3"
+        >
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -71,14 +90,7 @@ function Navigation() {
               {item.name}
             </a>
           ))}
-          <a
-            href="/zakira-cv.pdf"
-            download
-            className="block text-center bg-linear-to-r from-indigo-600 to-purple-600 rounded-full py-2 text-white font-medium"
-          >
-            Download CV
-          </a>
-        </div>
+        </motion.div>
       )}
     </nav>
   );
