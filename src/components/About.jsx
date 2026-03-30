@@ -55,7 +55,7 @@ function About() {
             <div className="space-y-6">
               <div className="p-6 bg-white/10 rounded-2xl border border-white/20">
                 <p className="text-purple-300 font-bold text-xl mb-2">BSc in Computer Science</p>
-                <p className="text-gray-300 mb-2">Ambo University | 2020 – 2024</p>
+                <p className="text-gray-300 mb-2">Ambo University | 2022 – 2026</p>
                 <p className="text-sm text-gray-400">
                   - Graduated with distinction • Senior project: AI-based attendance system
                 </p>
@@ -66,7 +66,7 @@ function About() {
               </div>
               <div className="p-6 bg-white/10 rounded-2xl border border-white/20">
                 <p className="text-purple-300 font-bold text-xl mb-2">Machine Learning Specialization</p>
-                <p className="text-gray-300">DeepLearning.AI | 2023</p>
+                <p className="text-gray-300">DeepLearning.AI | 2026</p>
               </div>
             </div>
           </div>
