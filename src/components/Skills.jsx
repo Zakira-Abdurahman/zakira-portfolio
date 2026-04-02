@@ -40,7 +40,12 @@ function Skills() {
       <div className="absolute top-0 left-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl -translate-x-1/2 animate-pulse"></div>
       
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-bold bg-linear-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent mb-16">
+        <h2 
+          className="text-4xl md:text-6xl font-bold bg-linear-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent mb-16"
+          style={{
+            textShadow: "0 0 8px rgba(139, 92, 246, 0.6), 0 0 16px rgba(139, 92, 246, 0.4), 0 0 24px rgba(255, 255, 255, 0.3)"
+          }}
+        >
           Technical Skills
         </h2>
 
