@@ -23,8 +23,7 @@ function Footer() {
         <p className="mb-4">
           © {new Date().getFullYear()} Zakira Abdurahman — Built with{" "}
           <span className="text-indigo-300">React</span> &{" "}
-          <span className="text-purple-300">Tailwind CSS</span> 
-         
+          
         </p>
 
         {/* Social links */}
