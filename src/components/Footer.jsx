@@ -19,11 +19,16 @@ function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-purple-500/50 to-transparent"></div>
 
       <div className="max-w-7xl mx-auto px-6 text-center">
-        {/* Copyright and tech stack */}
-        <p className="mb-4">
-          © {new Date().getFullYear()} Zakira Abdurahman — Built with{" "}
-          <span className="text-indigo-300">React</span> &{" "}
-          
+        {/* Copyright and description */}
+        <p className="mb-4 leading-relaxed">
+          © {new Date().getFullYear()} Zakira Abdurahman. All rights reserved.
+          <br />
+          Crafted with precision using{" "}
+          <span className="text-indigo-300">React</span> and modern web technologies.
+          <br />
+          <span className="text-gray-500">
+            Passionate about AI & Machine Learning
+          </span>
         </p>
 
         {/* Social links */}
@@ -37,6 +42,7 @@ function Footer() {
           >
             <FontAwesomeIcon icon={faGithub} />
           </a>
+
           <a
             href="https://linkedin.com/in/zakira-abdurahman-63283b28a/"
             target="_blank"
@@ -48,7 +54,7 @@ function Footer() {
           </a>
         </div>
 
-        {/* Back to top button with smooth scroll */}
+        {/* Back to top button */}
         <button
           onClick={scrollToTop}
           className="group inline-flex items-center gap-2 text-gray-400 hover:text-purple-300 transition-all duration-300"
@@ -59,9 +65,13 @@ function Footer() {
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
           </svg>
         </button>
       </div>
